@@ -1,7 +1,9 @@
 set(LIB_NAME "TREASUREMAP_INCLUDE")
 set(LIB_PATH ${CMAKE_CURRENT_LIST_DIR})
 
-set(__SRCS)
+file(GLOB __SRCS
+    ${LIB_PATH}/1/*.cpp
+)
 
 # include(${LIB_PATH}/Mapobject/mapobject.cmake)
 # list(APPEND __SRCS ${LIB_SRCS})
