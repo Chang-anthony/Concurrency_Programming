@@ -5,27 +5,30 @@
 #include <string>
 #include <stdio.h>
 #include <vector>
-#include "include/1/basic.hpp"
+// #include "include/1/basic.hpp"
+#include "include/2/ThreadOwner.hpp"
 #include <thread>
 
 
 int main()
 {
-    // create a thread 
-    std::thread t1(thread_work, "Hello World!!!");
-    // std::this_thread::sleep_for(std::chrono::seconds(1));
-    // main thread waits for the thread to finish
-    t1.join();
 
-    // create a thread using a function object
-    std::thread t2((ThreadFucntor()));
-    t2.join();
+    //t1 bind some_function
+    // std::thread t1(some_function); 
+    // //2  transfer t1 manage thread to t2, after transfer t1 invalid.
+    // std::thread t2 =  std::move(t1);
+    // //3 t1 can bind other thread , run some_other_function
+    // t1 = std::thread(some_other_function);
+    // //4  create the new Thread t3
+    // std::thread t3;
+    // //5  transfer t2 to t3
+    // t3 = std::move(t2);
+    // //6  transfer t3 to t1
+    // t1 = std::move(t3);
+    // std::this_thread::sleep_for(std::chrono::seconds(2000));
 
-    // create a thread using a lambda function
-    std::thread t3([](){
-        std::cout << "Lambda Thread" << std::endl;
-    });
-    t3.join();
+    // use_jointhread();
+    use_parallel_acc();
 
     return 0;
 }

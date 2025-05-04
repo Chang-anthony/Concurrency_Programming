@@ -3,6 +3,7 @@ set(LIB_INC_PATH ${CMAKE_CURRENT_LIST_DIR})
 
 set(__INCS
     ${LIB_INC_PATH}/1
+    ${LIB_INC_PATH}/2
 )
 
 # GLOB 透過cmake 語法 搜尋 path 底下的 *hpp file
